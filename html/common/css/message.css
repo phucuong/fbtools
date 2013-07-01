@@ -1,0 +1,55 @@
+#friend_area .message span.s_label {
+	padding: 10px;
+	margin-left: 20px;
+	width: 140px;
+	display: inline-block;
+}
+
+#friend_area .message textarea,
+#friend_area .message input {
+	padding: 5px;
+	width: 420px;
+}
+
+#friend_area .message button {
+	padding: 5px 10px;
+}
+
+#friend_area .message {
+	width: 720px;
+}
+
+#friend_area .message #user_list {
+	width: 520px;
+	display: inline-block;
+}
+
+#friend_area .message #sugessUser {
+	position: absolute;
+	margin: 0 0 0 180px;
+	padding: 0;
+	background: #cbcbcb;
+	width: 433px;
+}
+
+#friend_area .message .addPmUser{
+	/*display: inline-block;*/
+	cursor: hand; cursor: pointer;
+	background: #cbcbcb;
+}
+
+#friend_area .message .addPmUser:hover{
+	background: #ebebeb;
+}
+
+#friend_area .message .addedPmUser{
+	margin-left: 3px;
+	display: inline-block;
+	background: #cbcbcb;
+}
+
+#friend_area .message .addedPmUser img,
+#friend_area .message .addPmUser img{
+	vertical-align: middle;
+	padding: 5px;
+}

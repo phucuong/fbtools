@@ -1,0 +1,27 @@
+<div id="header_btn">
+	<div class="owner">
+		<a class="avatar" href="/user/{$user_info.user_id}"><img src="{$user_info.user_avatar}" width="26px" height="26px" /></a>
+		<a href="/setting"><img src="/common/images/setting.gif" width="23px" height="23px" alt = "アカウント情報、ヘルプ、ログアウトリンク表示"></a>
+		{* <a href="/user/{$user_info.user_id}">{$user_info.user_name}</a> *}
+		<a href="/logout"><img src="/common/images/btn_logout.png" /></a>
+	</div>
+
+	<div id="search_user_form">
+		{*
+		<input id="search_user_btn" type="image" name="search_user" src="/common/images/search_user_btn.gif" width="52" height="27" alt="ユーザ情報を検索する" >
+		*}
+		<input type="text" id="search_user_id"  name="search_user_name" value="" placeholder="ユーザ検索" >
+		<ul id="search_result"></ul>
+		<p id="search_user_aikon" ><img src="/common/images/akt_img.gif" width="17px" height="23px" ></p>
+	</div>{* /form toukou_form end *}
+
+	<div id="settingArea">
+		<noscript><div><ul><li><a href="#">ヘルプ</a></li><li><a href="#">ログアウト</a></li></ul></div></noscript>
+	</div>{* /div settingArea end *}
+</div>{* /div header_btn end *}
+
+<div id="hd_title clearfix">
+	<h1 class="sns_logo clearfix"><a href="/home"><img src="/common/images/sns_logo.jpg" alt="Tanbalogo" width="180" height="76"></a></h1>
+	<p class="clearfix"><img src="/common/images/spacer.gif" alt="ひとつの投稿コメントの終わりです" width="1" height="1"></p>
+</div>{* /div hd_title end *}
+<script src="/common/js/search.js"></script>

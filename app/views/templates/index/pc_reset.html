@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-language" content="ja">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" type="text/css" media="screen,tty,tv,projection,handheld" href="/common/css/top_style01.css">
+<link rel="stylesheet" type="text/css" media="screen,tty,tv,projection,handheld" href="/common/css/common.css">
+<script type="text/javascript" src="/common/js/jquery.js"></script>
+<script type="text/javascript" src="/common/js/md5.js"></script>
+<script type="text/javascript" src="/common/js/alert_box.js"></script>
+<script type="text/javascript" src="/common/js/pages/pc_reset.js"></script>
+<link rel="stylesheet" type="text/css" media="screen,tty,tv,projection,handheld" href="/common/css/alert_box.css">
+<title>tanba_SNS_site</title>
+
+</head>
+<body id="base">
+
+<div id="content_box">
+
+<div class="blockjump">
+<img src="/common/images/spacer.gif" alt="サイトメニューここから" width="1" height="1"><a name="PTOP" id="PTOP"><img src="/common/images/spacer.gif" alt="このページの先頭です" width="1" height="1"></a>
+</div><!-- /div blockjump end -->
+
+
+<div id="bd_rwrap">
+
+<div id="hd_title clearfix">
+<h1 class="sns_logo clearfix"><a href="/"><img src="/common/images/sns_logo.jpg" alt="Tanbalogo" width="180" height="76"></a></h1>
+</div><!-- /div hdrtitle end -->
+
+
+<div id="message_area">
+
+<div class="message clearfix">
+<p class="message_title">Tanbaへようこそ</p>
+
+<p class="message_p">家族や友達、身近な生活の中や気になる会社</p>
+
+<p class="message_p">今、何が起きているのかを見つけよう。</p>
+</div>
+
+</div>
+
+
+<div id="login_area">
+
+<div class="reset_form_area clearfix">
+
+	<input type="password" id="newpass" placeholder="パスワード">
+	<input type="password" id="confirmpass"  placeholder="パスワードを確認" >
+	<p class="error" id="error" style="padding-left: 17px; display: none;">パスワードが一致しません</p>
+	<center><button id="btn_reset">パスワードリセット</button></center>
+	
+</div>
+
+</div><!-- /div login_area end -->
+
+{include file='include/pc_alert_box.html'}
+
+</div><!-- /div bd_rwrap end -->
+
+<div id="top_footer">
+	<input type="hidden" id="code" value="{$reset_code}" />
+</div>
+
+</div><!-- /div content_box end -->
+
+
+
+</body>
+</html>

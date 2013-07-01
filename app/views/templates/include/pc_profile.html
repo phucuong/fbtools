@@ -1,0 +1,41 @@
+<div class="user_profile">
+	<h2>プロフィール</h2>
+
+	<div class="user_img"><a href="/user/{$user_info.user_id}"><img src="{$target_user_info.user_avatar}" width="120px" height="104px" ></a></div>
+
+	<div class="user_info">
+		<p class="user_info_name"><a class="userName" href="/user/{$user_info.user_id}">{$target_user_info.user_name}</a></p>
+		{if $target_user_info.user_birthday_openflag == "1" && $target_user_info.age != ""}
+		<p>{$target_user_info.age}歳</p>
+		{/if}
+		{if $target_user_info.user_school_openflag == "1" && $target_user_info.user_school != ""}
+		<p>{$target_user_info.user_school}</p>
+		{/if}
+		{if $target_user_id == "" || $target_user_id == "0"}
+		<a href="/setting">プロフィールを編集</a>
+		{/if}
+	</div>
+	
+	{if $detail_user_flag == "1"}
+	<div class="user_detail">
+		{if $profile.user_gender_openflag == "1"}
+		<p>Gender: {if $profile.user_gender == "1"}boy{elseif $profile.user_gender == "2"}girl{else}unknow{/if}</p>
+		{/if}
+		{if $profile.user_mail_openflag == "1"}
+		<p>Mail: {$target_user_info.user_mail}</p>
+		{/if}
+		{if $profile.user_birthday_openflag == "1" && $profile.user_birthday != ""}
+		<p>Birthday: {$profile.user_birthday}</p>
+		{/if}
+		{if $profile.user_address_openflag == "1" && $profile.user_address != ""}
+		<p>Address: {$profile.user_address}</p>
+		{/if}
+		{if $profile.user_tel_openflag == "1" && $profile.user_tel1 != ""}
+		<p>Phone: {$profile.user_tel1}-{$profile.user_tel2}-{$profile.user_tel3}</p>
+		{/if}
+		{if $profile.user_introduction_openflag == "1" && $profile.user_introduction != ""}
+		<p>Introduce: {$profile.user_introduction}</p>
+		{/if}
+	</div>
+	{/if}
+</div>

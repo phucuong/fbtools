@@ -1,0 +1,567 @@
+@charset "UTF-8";
+
+
+
+/* ----------＜＜基本スタイル＞＞---------- */
+body { margin: 0; padding: 0;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
+}
+
+body#base { color: #333; text-align: center; }
+body#base { background-color: #282828;  }
+a:link img{ text-decoration:none; border:none 0px; }
+a { text-decoration: none; }
+input {
+color: #999999;
+font: "Lucida Grande";
+}
+
+body {
+	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+}
+/*
+ul , li { list-style-type: none; }
+**/
+ul , li { list-style-type: none; margin: 0px; padding: 0px; }
+
+
+
+/*  ▽コンテンツボックス▽  */
+div#content_box { margin: 0 auto 0 auto; }
+div#content_box { text-align: left; }
+div#content_box { width: 1000px; background-color: #ffffff; _height: 1%; }
+
+div.blockjump img{
+	display:none;
+}
+
+
+/* --------------------------------------------------ヘッダーボックス-------------------------------------------------- */
+div#bd_rwrap{
+	padding:0;
+	background-image: url(../images/header_bg_color.gif);
+	background-position: 0 0;
+	background-repeat:repeat-x;
+	width:1000px;
+	float: left;
+}
+
+#header_btn { margin : 0 0 0 0 ; padding : 0 0 0 0;}
+#search_user_aikon { float:right; display : block ;}
+#search_user_aikon { margin : 0 0 0 0 ; padding : 8px 12px 0 0;}
+#settingBtn { float:right; display : block ;}
+#settingBtn { margin : 0 0 0 0 ; padding : 8px 30px 0 0;}
+#search_user_form { float:right; display : block ;}
+#search_user_form { margin : 0 25px 0 0 ; padding : 0 0 0 0;}
+#search_user_form #search_user_id { margin : 6px 6px 0 0 ; padding : 0 0 0 0 ; }
+#search_user_form #search_user_id { width : 295px; height : 24px; }
+#search_user_form #search_user_id { float:right; display : block ;}
+#search_user_form #search_user_btn { margin : 6px 16px 0 0 ; padding : 0 0 0 0 ; }
+#search_user_form #search_user_btn { float:right; display : block ;}
+
+
+#settingAreaInner { clear : both; }
+#settingAreaInner { margin : 0 0 0 868px ; padding : 0 0 0 0;}
+#settingAreaInner { width:119px; height:111px;}
+#settingAreaInner { background-image : url(../images/popup.gif); background-repeat: no-repeat;}
+#settingAreaInner { position: absolute; top: 40px;  }
+#settingAreaInner ul { margin : 0 0 0 0 ; padding : 28px 0 0 18px ; }
+#settingAreaInner li { margin : 0 0 0 0 ; padding : 4px 0 0 0 ; }
+#settingAreaInner a { margin : 0 0 0 0 ; padding : 0 0 0 0 ; }
+#settingAreaInner a { color : #ffffff ; font-size: 90%; font-weight : 500 ; font-family:'Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif; }
+#fancybox-wrap { top : 50px !important; }
+#user_account_touroku_form { margin : 20px 0 20px 0 ; padding : 0 0 0 0 ; }
+#user_account_touroku_form #user_account_id {height : 20px; width : 170px; margin-top:10px;}
+#user_account_touroku_form #user_account_password {height : 20px; width : 170px;  margin-top:10px;}
+#user_account_touroku_form #user_account_password_kakunin {height : 20px; width : 170px;  margin-top:10px;}
+#user_account_touroku_form #user_account_pic {height : 9px; width : 100px;  margin-top:10px;}
+#user_account_touroku_form #user_account_pic {padding-top:11px; }
+#user_account_touroku_form #user_account_upload_btn { margin : 0 0 0 0 ; padding : 0 0 0 5px ;  margin-top:10px;}
+#user_account_touroku_form #user_account_comment { width : 170px;  margin-top:10px;}
+#user_account_touroku_form .user_account_touroku_text { display :inline-block ; width : 150px ; }
+#user_account_touroku_form .user_account_touroku_text { text-align : left ; }
+#user_account_touroku_form .user_account_touroku_text { vertical-align : top ; }
+#user_account_touroku_form .user_account_touroku_text { color : #000000 ; font-size: 120%; font-weight : 500 ; font-family:'メイリオ',Meiryo,'Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif; }
+
+
+
+
+/* --------------------------------------------------ロゴエリア-------------------------------------------------- */
+.sns_logo{ margin: 0 0 0 40px; padding : 0 0 0 0 ; }
+.sns_logo img{ margin:0 0 0 0 ; padding:0 0 0 0; }
+.sns_logo img{ position: absolute; top:0px;}
+
+/* --------------------------------------------------左ボックスエリア-------------------------------------------------- */
+
+
+#user_area { width : 280px; }
+#user_area { margin : 25px 0px 0px ; padding: 0 0 0 0 ; }
+#user_area { float:left; background-color:#fff; }
+#user_area .user_profile { clear:both; }
+#user_area .user_profile { margin : 0 0 0 0 ; padding: 0 0 0 20px ; }
+#user_area .user_profile h2 { margin : 0 0 0 0 ; padding: 15px 0 15px 0 ; }
+#user_area .user_profile h2 { color : #777777 ; font-size: 100%; font-weight : 700 ; font-family:'Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif; }
+#user_area .user_profile .user_img {  margin: 0 0 0 0 ; padding : 0 0 20px 0 ; }
+#user_area .user_profile .user_img { float:left; }
+#user_area .user_profile .user_info { margin: 0 0 0 0 ; padding : 0 0 0px 16px ; }
+#user_area .user_profile .user_info { float:left; width: 110px; }
+#user_area .user_profile .user_info p { margin : 0 0 0 0 ; padding : 0.8em 0 0 0 ; }
+#user_area .user_profile .user_info p { color : #000 ; font-size: 100%; font-weight : 500 ; font-family:'Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif; }
+#user_area .user_profile .user_info a { color : #345EBE ; font-size: 80%; font-weight : 500 ; font-family:'Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif; }
+#user_area .user_profile .user_info a { line-height : 3.0em ; }
+#user_area .user_profile .user_info .user_info_name a { margin: 0 0 0 0 ; padding : 0 0 0 0 ; line-height : 1.0em; font-weight : 700 ;}
+
+#user_area .user_profile .user_detail { margin: 0 0 0 0 ; padding : 0 0 20px 0px ; }
+#user_area .user_profile .user_detail { float:left; width: 235px; }
+#user_area .user_profile .user_detail p { margin : 0 0 0 0 ; padding : 0.8em 0 0 0 ; }
+#user_area .user_profile .user_detail p { color : #000 ; font-size: 100%; font-weight : 500 ; font-family:'Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif; }
+#user_area .user_profile .user_detail a { color : #345EBE ; font-size: 80%; font-weight : 500 ; font-family:'Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif; }
+#user_area .user_profile .user_detail a { line-height : 3.0em ; }
+
+#user_area .link_list { margin : 0 0 0 20px ; padding: 0 0 0 0 ; }
+#user_area .link_list { clear:both; }
+#user_area .link_list { background-color : #F6F6F6 ; background-image: url(../images/user_area_fotter.jpg) ;  background-position: 0 0 ; background-repeat:no-repeat; }
+#user_area .link_list h2 { margin : 0 0 0 0 ; padding: 28px 0 0 13px ; }
+#user_area .link_list h2 { color : #333333 ; font-size: 100%; font-weight : 700 ; font-family:'Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif; }
+#user_area .link_list ul { margin : 0 0 0 0 ; padding: 12px 0 20px 13px ; }
+#user_area .link_list ul li { margin : 0 0 0 0 ; padding: 0 0 0 0 ; }
+#user_area .link_list ul li { line-height : 1.5em; }
+#user_area .link_list ul li { list-style : none ; }
+#user_area .link_list ul li a { color : #345EBE ; font-size: 90%; font-weight : 500 ; font-family:'Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif; }
+
+#user_area .koukoku .koukoku_list { margin : 0 0 0 0 ; padding: 25px 0 0 20px ; }
+#user_area .koukoku .koukoku_list h3 { margin : 0 0 0 0 ; padding: 0 0 0 13px ; }
+#user_area .koukoku .koukoku_list h3 { color : #333333 ; font-size: 90%; font-weight : 700 ; font-family:'Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif; }
+#user_area .koukoku .koukoku_list p { margin : 0 0 0 0 ; padding: 5px 0 0 13px ; }
+#user_area .koukoku .koukoku_list p { line-height : 1.5em; }
+#user_area .koukoku .koukoku_list p { color : #333333 ; font-size: 90%; font-weight : 500 ; font-family:'Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif; }
+#user_area .koukoku .koukoku_list { clear:both; }
+#user_area .koukoku .koukoku_list .koukoku_img { float:left; }
+
+/* -----------------広告エリア文章ボックス横幅設定------------------ */
+#user_area .koukoku .koukoku_list .koukoku_info { float:left; width : 160px;}
+
+#header_btn #search_user_form #search_result {
+	position: absolute;
+	margin: 35px 0 0 29px;
+	padding: 0;
+	background: #cbcbcb;
+	width: 297px;
+	z-index: 99;
+}
+
+#header_btn #search_user_form #search_result .addPmUser:hover{
+	background: #EBEBEB;
+}
+#header_btn #search_user_form #search_result .addPmUser{
+	cursor: hand; cursor: pointer;
+	background: #cbcbcb;
+}
+
+#header_btn #search_user_form #search_result .addPmUser img{
+	vertical-align: middle;
+	padding: 5px;
+}
+
+/* --------------------------------------------------右ボックスエリア-------------------------------------------------- */
+
+
+#friend_area { float:left;  background-color:#fff; width: 720px; }
+#friend_area { margin : 13px 0 0 0 ; padding: 0 0 0 0 ; min-height: 400px; }
+#friend_area .user_toukou  { clear: both; }
+#friend_area .user_toukou { margin : 0 0 17px 0 ; padding : 0 0 0 0; }
+#friend_area .user_toukou .toukou_form { position: relative; border: 1px solid #BCBCBC; border-radius: 5px; -moz-border-radius: 5px; 	-webkit-border-radius: 5px; margin : 0 0 0 18px ; padding : 0px; width: 680px; }
+#friend_area .user_toukou .toukou_form #toukou_filed_id { width: 658px; height : 60px ; padding: 10px !important; resize: none; border: none; float: left; }
+#friend_area .user_toukou .toukou_form #toukou_btn { float: right; margin : 3px ; padding : 0 10px 0 10px; }
+#friend_area .user_toukou .toukou_form #attach_files { float: left; margin: 5px 0 5px 0; padding: 0; }
+#friend_area .user_toukou .toukou_form .attach_file { padding: 5px 10px; margin-left: 3px; }
+#friend_area .user_toukou .toukou_form .attach_file a { margin-left: 5px; }
+#friend_area .user_toukou .toukou_form .attach_file img { vertical-align: middle; }
+#friend_area .user_toukou .toukou_form .upload_span { 
+	background:url("/common/images/icon-tw-picture.png") no-repeat; 
+	width: 180px; 
+	height: 22px; 
+	position: absolute; 
+	display: block;
+	cursor: pointer !important; 
+}
+#friend_area .user_toukou .toukou_form #upload_btn { 
+	float: left; 
+	margin : 0 ; 
+	padding : 0 10px 0 10px; 
+	opacity: 0; 
+	cursor: pointer !important; 
+	width: 42px; 
+	height: 22px;
+}
+#friend_area .user_toukou .toukou_form .func_upload  { 
+	width: 180px;
+	height: 22px;
+	background: #ececec;
+	float: left;
+	border-right: 1px solid #bcbcbc;
+	padding: 10px;
+	cursor: pointer !important; 
+}
+#friend_area .user_toukou  div.post_detail { float: left; padding: 5px 0 10px 18px; line-height: 1; }
+#friend_area .user_toukou  div.post_detail p { color: #888888; font-size: 12px; }
+#friend_area .user_toukou  div.post_detail p.error { color: #FF0000 !important; background: #FFF; }
+#friend_area .user_toukou .toukou_form .func_upload:hover  { background: #DDD; }
+#friend_area .user_toukou .toukou_form .func_menu  { 
+	border-top: 1px solid #BCBCBC;
+    float: left;
+    position: relative;
+    width: 680px;
+}
+
+/* ------------------投稿ボックスエリア------------------ */
+
+#friend_area .timeline .timeline_list { clear:both; }
+#friend_area .timeline .timeline_list { margin : 0 0 30px 0 ; }
+#friend_area .timeline .timeline_list .timeline_list_end { clear:both; }
+#friend_area .timeline .timeline_list .toukou_user { float:left; width: 128px; }
+#friend_area .timeline .timeline_list .toukou_user img { padding :0 0 0 20px ; }
+#friend_area .timeline .timeline_list .toukou_user p { margin : 0 0 0 0 ; padding : 0.5em 0 0 20px ; }
+#friend_area .timeline .timeline_list .toukou_user p { color : #000 ; font-size: 100%; font-weight : 500 ; font-family:'Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif; }
+#friend_area .timeline .timeline_list .toukou_user .toukou_user_name { margin: 0 0 0 0 ; padding : 10px 0 0 20px ; line-height : 1.0em; font-weight : 700 ;}
+#friend_area .timeline .timeline_list .toukou_naiyou_area { float:left; width: 592px; }
+/* ------------------投稿エリアコメントボックス横幅設定------------------ */
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_naiyou { width : 526px ; background-color : #F6F6F6 ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_naiyou { margin : 0 20px 0 20px ; padding : 13px 13px 13px 13px ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_naiyou a {color : #345EBE ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_naiyou p { color : #393939 ; font-size: 90%; font-weight : 500 ; font-family:'メイリオ',Meiryo,'Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_naiyou p { margin : 0 0 0 0 ; padding : 0 0 13px 0 ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_naiyou img { padding : 0 0 13px 0 ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_naiyou .iine a { margin: 0 0 0 0 ; padding : 0 10px 0 0 ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .iine a.who_like { margin: 0 !important; padding : 0 !important; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_naiyou .iine .iine_torikesi { margin: 0 0 0 0 ; padding : 0 20px 0 0 ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_zibun { clear:both; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_zibun .toukou_comment_form { margin : 0 20px 0 20px ; padding : 13px 13px 10px 13px ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_zibun .toukou_comment_form { background-color : #dddddd ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_zibun .toukou_comment_form img { float : left ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_zibun .toukou_comment_form .message_com { width:337px; height:51px; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_zibun .toukou_comment_form .message_com { margin : 0px 0 0 13px ; padding : 2px; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_zibun .toukou_comment_form .message_com { float : left ; resize: none; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_zibun .toukou_comment_form .btn_comment { margin : 8px 0 0 13px ; padding : 0 0 0 0 ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_zibun .toukou_comment_form .toukou_comment_tomodati_end { clear:both; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati { margin :0 20px 0 20px ; padding : 29px 0 0 0 ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .iine span.posttime { color: #BCBCBC; font-size: 80%; margin-right: 10px; }
+/* ------------------投稿コメントの境界線ライン設定------------------ */
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati { background-color : #F6F6F6 ; background-image: url(../images/toukou_comment_tomodati_aria_line.jpg) ;  background-position: 0 0 ; background-repeat:no-repeat; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati { margin :0 20px 0 20px ; padding : 29px 0 0 0 ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_end { clear : both ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list { clear:both; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list { margin : 0 0 0 0 ; padding : 0 0 0 0 ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list { background-color : #F6F6F6 ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_list_end { clear : both ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_info { float:left; width: 76px; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_toukou { float:left; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_toukou a {color : #345EBE ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_info img { padding :0 0 0 13px ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_info p { margin : 0 0 0 0 ; padding :0.5em 0 0 13px ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_info p { font-size: 90%; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_info { background-color : #F6F6F6 ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_toukou { padding : 0 13px 13px 13px ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_toukou { background-color : #F6F6F6 ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_toukou { width : 450px ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_toukou p { color : #393939 ; font-size: 90%; font-weight : 500 ; font-family:'メイリオ',Meiryo,'Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_toukou p { margin : 0 0 0 0 ; padding : 0 0 0 0 ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_toukou p { line-height : 1.5em ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_toukou a { margin: 0 0 0 0 ; padding : 0 10px 0 0 ; }
+#friend_area .timeline .timeline_list .toukou_naiyou_area .toukou_comment_tomodati .toukou_comment_tomodati_list .toukou_comment_tomodati_toukou .iine_torikesi { margin: 0 0 0 0 ; padding : 0 20px 0 0 ; }
+
+.popup {
+	width: 512px;
+	height: 400px;/*
+	position: absolute;
+	top: 100px;*/
+	background: #FFF;
+}
+
+.userName {
+	color: #000 !important;
+	font-size: 100% !important;
+	line-height: 1em !important;
+}
+
+/* --------------------------------------------------トップフッター-------------------------------------------------- */
+#top_footer { margin : 0 0 0 0 ; padding : 0 0 0 0 ; }
+#top_footer { width : 1000px; height : 30px; }
+#top_footer { clear: both; background-color : #A3D900; }
+#top_footer { font-size: 12px ; }
+#top_footer {text-align : center ; clear : both ; }
+#top_footer p { margin : 0px 0 0 0 ; padding : 10px 0 0 0 ; color : #000000 ; }
+#top_footer a { color : #000000; }
+/* ボックス内floatのclear */
+.clearfix:after {
+content: ".";
+display: block;
+visibility: hidden;
+clear: both;
+height: 0;
+}
+.clearfix {display: inline-block;}
+/* Hides from macIE \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from macIE */
+
+
+/* コンテンツ中央寄せ */
+.center {
+	text-align: center;
+}
+/* コンテンツ右寄せ */
+.align-right {
+	text-align: right;
+}
+
+/* 表用セル右寄せ */
+.right {
+	text-align: right;
+}
+
+/* 表用セル左寄せ */
+.left {
+	text-align: left;
+}
+.va-center {
+	vertical-align: middle;
+}
+.float-on {
+	clear: none;
+}
+
+.show_hidden_comments {
+	border-bottom: 1px solid #BCBCBC;
+    margin: 0 5px 10px;
+}
+.show_hidden_comments a{
+	color: #000;
+}
+
+.show_hidden_comments a:hover{
+	color: #929292;
+}
+
+.hidden_comment {
+	display: none;
+}
+
+.dlParent {  position: relative; }
+span.delete{
+	position: absolute;
+	top: 10px;
+	right: 30px;
+}
+
+.dlParent2 {  position: relative; }
+span.delete2{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+div.owner {
+	float: right;
+	padding: 6px;
+}
+
+div.owner img {
+	vertical-align: middle;
+}
+
+div.owner .avatar {
+	/*border: 1px solid #bcbcbc;*/
+}
+
+div.read_more {
+	padding: 10px;
+	margin: 10px;
+	background: #bcbcbc;
+	text-align: center;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	color: #0F0F0F;
+	cursor: hand; cursor: pointer;
+}
+
+div.read_more:hover {
+	color: #EBEBEB;
+}
+
+span.unread {
+	padding: 0 5px;
+	margin-left: 5px;
+	color: #FFF;
+	background: #FF0000;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+#user_area .link_list #pm_list li {
+	padding: 5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+#user_area .link_list a { color: #000; }
+#user_area .link_list a:hover { color: #AAA; }
+
+li.leftMenuFocus {
+	background: #EBEBEB;
+	margin-right: 10px !important;
+}
+
+ul.img_list {
+	margin: 10px 0 0 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+ul.img_list li {
+    margin-bottom: 10px;
+    margin-right: 8px;
+    overflow: hidden;
+    padding: 10px;
+	display: inline;
+}
+
+.form{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.form th,td{
+	border: 1px solid #D9D9D9;
+    text-align: left;
+    padding: 10px;
+}
+.form p{
+    margin: 0px;
+}
+.form textarea{
+	height: 50px;
+    width: 335px;	
+}
+.form select {
+    border: 1px solid #D4D4D4;
+    height: 28px;
+    line-height: 24px;
+    margin: 0;
+    padding: 5px;
+    vertical-align: top;
+}
+input[type="email"], input[type="password"], input[type="text"] {
+    border: 1px solid #D4D4D4;
+    height: 22px;
+    padding: 2px 5px;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.form .publicList{
+	float: right;	
+}
+
+.form ul.list li {
+    float: left;
+    margin-right: 20px;
+}
+
+.small{
+	width: 130px;	
+}
+.tiny{
+	width: 35px;	
+}
+.large{
+	width: 335px;	
+}
+.submitBtn{
+	text-align: center;
+	margin: 15px;
+}
+.error{
+	background-color: #FFF4F4;	
+}
+.form tr td p.error{
+	color: red;	
+}
+
+#user_area #wrap_menu{
+	padding: 10px;
+	float: left;
+}
+
+#user_area #wrap_menu ul li{
+	margin: 10px 0 0 0 ;
+}
+
+#user_area #wrap_menu ul li a {
+    background-color: #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    color: #000000;
+    line-height: 44px;
+    margin-bottom: 5px;
+    margin-top: 0;
+    padding: 10px;
+    text-align: left;
+}
+#user_area #wrap_menu ul li a:hover {
+    background-color: #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    color: #CE5C54;
+    line-height: 44px;
+    margin-bottom: 5px;
+    margin-top: 0;
+    padding: 10px;
+    text-align: left;
+}
+#user_area #wrap_menu ul li a.active {
+    background-color: #C6C6C6;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    line-height: 44px;
+    margin-bottom: 5px;
+    margin-top: 0;
+    padding: 10px;
+    text-align: left;
+}
+#user_area #wrap_menu ul li a span {
+    display: inline-block;
+    width: 225px;
+}
+
+.submitBtn a{
+	font-size: 14px;
+    padding: 3px 25px 2px;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 2px 2px #BF081A;
+    display: inline-block;
+    line-height: 1.7em;
+    background-color: #F24142;
+    background-image: -moz-linear-gradient(center top , #FD7F82, #F24142);
+    border: 1px solid #EE6364;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.submitBtn a:hover{
+	text-decoration: none;
+	background-color: #fb787b;
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#fda9ab),to(#f24142));
+	background-image: -moz-linear-gradient(top,#fda9ab,#f24142);
+	background-image: -o-linear-gradient(top,#fda9ab,#f24142);
+	background-image: -ms-linear-gradient(top,#fda9ab,#f24142);
+	background-image: linear-gradient(top,#fda9ab,#f24142);	
+}
+
+.toList {
+	margin: 0 0 5px 20px;
+}
+

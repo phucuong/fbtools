@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+/* Mac_IE4.5は次のcssを読み込まない */
+
+@import url("content_style_main.css");

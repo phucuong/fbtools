@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="content-language" content="ja">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" type="text/css" media="screen,tty,tv,projection,handheld" href="/common/css/top_style01.css">
+<link rel="stylesheet" type="text/css" media="screen,tty,tv,projection,handheld" href="/common/css/common.css">
+<link rel="stylesheet" type="text/css" media="screen,tty,tv,projection,handheld" href="/common/css/alert_box.css">
+<script type="text/javascript" src="/common/js/jquery.js"></script>
+<script type="text/javascript" src="/common/js/md5.js"></script>
+<script type="text/javascript" src="/common/js/pages/pc_index.js"></script>
+<script type="text/javascript" src="/common/js/jquery.upload-1.0.2.js"></script>
+<script type="text/javascript" src="/common/js/jquery.fancybox-1.3.4.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="/common/css/jquery.fancybox-1.3.4.css" media="screen" />
+<title>tanba_SNS_site</title>
+
+</head>
+<body id="base">
+<div id="fb-root"></div>
+
+<script>
+{literal}
+	window.fbAsyncInit = function() {
+		FB.init({
+{/literal}
+			appId   : '{$app_id}',
+{literal}
+			oauth   : true,
+			status  : true, // check login status
+			cookie  : true, // enable cookies to allow the server to access the session
+			xfbml   : true // parse XFBML
+		});
+
+	  };
+
+	function fb_login(){
+		FB.login(function(response) {
+
+			if (response.authResponse) {
+				//console.log('Welcome!  Fetching your information.... ');
+				//console.log(response); // dump complete info
+				//access_token = response.authResponse.accessToken; //get access token
+				//user_id = response.authResponse.userID; //get FB UID
+
+				FB.api('/me', function(response) {
+					// user_email = response.email; //get user email
+					$.ajax({
+						type: 'POST',
+						url: '/fb_login.html',
+						dataType: 'json',
+						success: function(data){
+						  if(data.success == 1){
+							  location.href = "/home";
+						  }
+						}
+					});         
+				});
+
+			} else {
+				//user hit cancel button
+				// console.log('User cancelled login or did not fully authorize.');
+			}
+		}, {
+			scope: 'publish_stream,email'
+		});
+	}
+	(function() {
+		var e = document.createElement('script');
+		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+		e.async = true;
+		document.getElementById('fb-root').appendChild(e);
+	}());
+{/literal}
+</script>
+<!--Below we include the Login Button social plugin. This button uses the JavaScript SDK to-->
+<!--present a graphical Login button that triggers the FB.login() function when clicked.-->
+<div id="content_box">
+
+<div class="blockjump">
+<img src="/common/images/spacer.gif" alt="サイトメニューここから" width="1" height="1"><a name="PTOP" id="PTOP"><img src="/common/images/spacer.gif" alt="このページの先頭です" width="1" height="1"></a>
+</div><!-- /div blockjump end -->
+
+
+<div id="bd_rwrap">
+
+<div id="hd_title clearfix">
+<h1 class="sns_logo clearfix"><img src="/common/images/sns_logo.jpg" alt="Tanbalogo" width="180" height="76"></h1>
+</div><!-- /div hdrtitle end -->
+
+
+<div id="message_area">
+
+<div class="message clearfix">
+<p class="message_title">Tanbaへようこそ</p>
+
+<p class="message_p">家族や友達、身近な生活の中や気になる会社</p>
+
+<p class="message_p">今、何が起きているのかを見つけよう。</p>
+</div>
+
+</div>
+
+
+<div id="login_area">
+
+<div class="login_form_area clearfix">
+
+<p class="sinki">
+<a id="user_account_touroku" href="/common/images/title_bar.jpg" taitoru='<form id = "user_account_touroku_form">
+<p class="user_account_touroku_text">メールアドレス：</p><input class="user_account_input" type="text" id="user_account_mail"  name="user_account_mail" value="" ><br>
+<p class="p_err" id="err_user_account_mail"></p>
+<p class="user_account_touroku_text">姓：</p><input class="user_account_input" type="text" id="user_account_first_name"  name="user_account_first_name" value="" ><br>
+<p class="user_account_touroku_text">名：</p><input class="user_account_input" type="text" id="user_account_last_name"  name="user_account_last_name" value="" ><br>
+<p class="p_err" id="err_user_account_id"></p>
+<p class="user_account_touroku_text">パスワード：</p><input class="user_account_input" type="password" id="user_account_password"  name="user_account_password" value="" ><br>
+<p class="p_err" id="err_user_account_password"></p>
+<p class="user_account_touroku_text">パスワードの確認：</p><input class="user_account_input" type="password" id="user_account_password_kakunin"  name="user_account_password_kakunin" value="" ><br>
+<p class="p_err" id="err_user_account_password_kakunin"></p>
+<p class="user_account_touroku_text">写真：</p><img id="avatar" src="" /><input type="file" id="file_input" name="file_input" enctype="multipart/form-data" /><br>
+<p class="user_account_touroku_text"></p><img id="p_img" src="/common/images/default.jpg" width="50px" height="50px" /><br /><br />
+<p class="user_account_touroku_btn"><img id="user_account_touroku_btn" name="user_account_touroku" src="/common/images/btn_touroku.gif" width="55" height="36" alt="ユーザ情報を登録する" style="cursor: pointer;" ></p>
+</form>'><img src="/common/images/top_btn_sinki.gif" width="121" height="29"></a></p>
+<!-- <img id="user_account_upload_btn" name="user_account_upload_btn" src="/common/images/upload_btn.gif" width="64px" height="22px" alt="写真をアップロードする" /> -->
+<p class="error" id="error2" style="text-align: center; display: none;">IDまたはパスワードが間違っています。</p>
+<input type="text" id="login_id" name="login_id" placeholder="ユーザ名、またはメールアドレス">
+<p class="error" id="error0" style="padding-left: 17px; display: none;">メールアドレスが入力されていません。</p>
+<input type="password" id="login_password"  name="login_password" placeholder="パスワード" >
+<p class="error" id="error3" style="padding-left: 17px; display: none;">パスワードが入力されていません。</p>
+<input id="login_btn" type="image" name="login" src="/common/images/top_btn_login.gif" width="179" height="58" alt="ログイン" >
+<a id="forgotpassword" style="float: right; margin: 10px 20px 0 0;" href="/common/images/title_bar.jpg" taitoru='<form id = "reset_form">
+<p class="user_account_touroku_text">メールアドレス：</p><input type="text" id="user_mail"  name="user_mail" value="" ><br>
+<p class="p_err" id="err_forgetpass"></p><br>
+<p class="user_account_touroku_btn"><img id="reset_btn" name="reset_btn" src="/common/images/btn_sendmail.png" width="104" height="36" alt="reset password" style="cursor: pointer;" ></p>
+</form>'>パスワードをお忘れの場合</a></p>
+</div><!-- /form login_form_area end -->
+
+<p class="top_btn_fb_login">
+<a href="#" onclick="fb_login();"><img src="/common/images/top_btn_fb_login.png" width="253" width="50"></a>
+</p>
+<!--
+<div id="fb_lg">
+	<div style="float:left;" class="fb-login-button" data-size="xlarge" scope="email,user_checkins">
+        Login with Facebook
+	</div>
+</div>
+
+<a href="Javascript:void(0);" id="btn_login_fb" style="display:none;">
+<div id="fb_bg">
+<span id="fb_bg_top"></span><span id="fb_bg_mid">Login with facebook</span><span class="fb_bg_end">
+</div>
+</a>
+-->
+</div><!-- /div login_area end -->
+
+
+
+</div><!-- /div bd_rwrap end -->
+
+<div id="top_footer">
+
+</div>
+
+</div><!-- /div content_box end -->
+
+
+{include file='include/pc_alert_box.html'}
+<script type="text/javascript" src="/common/js/alert_box.js"></script>
+</body>
+</html>

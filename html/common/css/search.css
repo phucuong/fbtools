@@ -1,0 +1,26 @@
+#friend_area #searchResult div.user {
+	padding: 10px;
+	margin-left: 20px;
+}
+
+#friend_area #searchResult div.user a {
+	display: inline-block;
+	width: 110px;
+}
+
+#friend_area #searchResult div.user div.user_detail {
+	float: right;
+    margin-left: 15px;
+	width: 555px;
+}
+
+#friend_area #searchResult div.user div.user_detail p {
+	margin: 10px 0;
+	font-family: 'Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif;
+}
+
+#friend_area #searchResult div.user div.user_detail p .userName {
+	font-weight: 700;
+    line-height: 1em;
+}
+

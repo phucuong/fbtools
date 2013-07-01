@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+/* Win_IE4は次のcssを読み込まない */
+
+@import "content_style02.css";

@@ -1,0 +1,35 @@
+#dv_wrap{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 5000px;
+	background: #777777;
+	opacity: 0.7;
+	filter: alpha(opacity = 70);
+	-moz-opacity: 0.7;
+	display: none;
+	z-index: 9000;
+}
+#alert_box{
+	width: 500px;
+	position: absolute;
+	top: 300px;
+	left: 300px;
+	background: none repeat scroll 0 0 #FFFFFF;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 8px solid #565656;
+	display: none;
+	z-index: 9001;
+}
+#alert_box #alert_title{
+	text-align: right;
+	/* padding-right: 5px; */
+}
+#alert_box #alert_content{
+	margin: 10px 0;
+    text-align: center;
+    min-height: 50px;
+}
