@@ -1,5 +1,5 @@
 <?php
-    ini_set('display_errors', '0');
+    ini_set('display_errors', '1');
     class Bootstrap
     {
         private $_applicationFolder = "../app/";
@@ -8,7 +8,6 @@
         {
             set_include_path(
                 $this->_applicationFolder ."libs/ZendFramework-1.11.12/library" . PATH_SEPARATOR .
-                $this->_applicationFolder ."models" . PATH_SEPARATOR .
                 $this->_applicationFolder ."services" . PATH_SEPARATOR .
                 $this->_applicationFolder ."facebook" . PATH_SEPARATOR .
                 get_include_path()
@@ -18,10 +17,6 @@
 
             $this->_config = new Zend_Config_Ini($this->_applicationFolder ."config.ini", "common");
 
-            require_once $this->_applicationFolder . "include/lang_jp.php";
-            $this->lang_array = $lang_array;
-
-            $this->_initDataBase();
             $this->_setRegistry();
 
             Zend_Session::setOptions();
@@ -51,23 +46,7 @@
                 )
             );
 
-            // ===== �L�����A�̐U�蕪�� ===== //
-            $dev = new CommonFnc_Mobile_Class;
-            if($dev->is_mobile()){
-                if($dev->is_docomo()){
-                    header('Content-Type: application/xhtml+xml; charset=SJIS');
-                } else if($dev->is_au()){
-                    header("Content-type: text/html; charset=Shift_JIS");
-                } else if($dev->is_sb()){
-                    echo '<?xml version="1.0" encoding="Shift_JIS"?>';
-                    header("Content-type: text/html; charset=Shift_JIS");
-                }else{
-                    header("Content-Type: application/xhtml+xml; charset=Shift_JIS");
-                }
-                $view->loadFilter ("output", "convert_encoding");
-            }
-            $dev_type = $dev->is_pc() ? "pc" : ($dev->is_sp() ? "sp":"mb");
-            Zend_Registry::set("dev_type", $dev_type);
+            $dev_type = "pc";
 
             $viewRenderer = Zend_Controller_Action_HelperBroker::getStaticHelper("ViewRenderer");
             $viewRenderer->setView($view)
@@ -78,24 +57,8 @@
             $frontController = $this->_setFrontController();
             $frontController->dispatch();
         }
-        private function _initDataBase()
-        {
-            $params = array(
-                'host'        => $this->_config->db->parm->hostname
-                ,"username"    => $this->_config->db->parm->username
-                ,"password"    => $this->_config->db->parm->password
-                ,"dbname"    => $this->_config->db->parm->dbname
-                ,"charset"   => "utf8"
-            );
-            $db = Zend_Db::factory("Pdo_mysql", $params);
-            $db->setFetchMode(Zend_Db::FETCH_ASSOC);
-            Zend_Db_Table_Abstract::setDefaultAdapter($db);
-            Zend_Registry::set("db", $db);
-        }
+
         private function _setRegistry(){
-            Zend_Registry::set("language", "ja");
-            Zend_Registry::set("NS", "SNS_Session");
-            Zend_Registry::set("lang_array", $this->lang_array);
             date_default_timezone_set($this->_config->date_default_timezone);
             Zend_Registry::set("config", $this->_config);
             /***** Set Directory Path *****/

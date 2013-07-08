@@ -1,47 +1,17 @@
 <?php
 	class IndexController extends Zend_Controller_Action
 	{
-		private $_nameSpace;
-		protected $_login_cookie_id = "AL";
-		private $MAX_UP_FILE = 25000;
 		private $APP_ID = '';
 		private $SECRET = '';
 		
 		public function init()
 		{
-			$app = new CommonFnc_GetAppInfo;
-			$this->view->app = $app->get();
 			$this->view->app_id = $this->APP_ID = Zend_Registry::get('app_id');
 			$this->SECRET = Zend_Registry::get('secret');
 		}
 		public function indexAction()
 		{
-			$zs = new CommonFnc_Z_Session_Class();
-            $user_info = $zs->setSessinData2Array();
-			if ( !empty($user_info["user_id"]) ){
-				header("Location: /home");
-                exit();
-            }
-			/*if (isset($_COOKIE[$this->_login_cookie_id])){
-				$cua = new CustUsersAutologin;
-				$user_array = $cua->search($_COOKIE[$this->_login_cookie_id]);
-				if (empty($user_array["user_mail"]) || empty($user_array["password"])){
-					$this->delete_cookie($_COOKIE[$this->_login_cookie_id]);
-					return;
-				}
-				$cust_user = new CustUsers();
-				$ret = $cust_user->validateUser( $user_array["user_mail"], $user_array["password"] );
-				if ( empty($ret["user_id"]) ){
-					$this->delete_cookie($_COOKIE[$this->_login_cookie_id]);
-					header("location:/");
-					exit();
-				}
-				$zs = new CommonFnc_Z_Session_Class();
-				$zs->setSession($ret);
-				$url = new GenURL();
-				header("location:".$url->setHomeURL($ret));
-				exit();
-			}*/
+			
 		}
 		
 		public function ajaxuploadAction(){
@@ -243,89 +213,30 @@
   				'appId'  => $this->APP_ID,
   				'secret' => $this->SECRET,
 			));
-			$user_id = $facebook->getUser();
 			$data['success'] = 0;
+			$user_id = $facebook->getUser();
 			if($user_id){
 				try {
 			        $user_profile = $facebook->api('/me?fields=picture,first_name,last_name,gender,username,email,link','GET');
-			        $email = $user_profile['email'];
-			        $username = $user_profile['username'];
-			        if(!empty($user_profile) && !empty($email) && !empty($username)){
-			        	$custUser = new CustUsers();
-			        	$userInfo = $custUser->getUserFromMail($email);
-			        	if(empty($userInfo)){
-			        		//$url = $user_profile['picture']['data']['url'];
-			        		$url = 'http://graph.facebook.com/'.$username.'/picture?width=150&height=150';
-							$str = mt_rand(0,999).date("Ymdhis");
-							$file_path = dirname(__FILE__).Zend_Registry::get("userimg_path");
-            				$filename =  md5($str).".jpg";
-            				$copyFile = $file_path . $filename;
-							$byte = file_put_contents($copyFile, @file_get_contents($url));
-							if($byte > 0){
-								$avatar = Zend_Registry::get("userimg_url").$filename;
-							}
-							else{
-								$avatar = Zend_Registry::get('default_photo');
-							}
-			        		$insert_data = array(
-				        		'user_mail'=>$email,
-			        			'user_name_sei'=>$user_profile['first_name'],
-			        			'user_name_mei'=>$user_profile['last_name'],
-			        			'user_password'=>md5(rand()),
-				        		'user_avatar'=>$avatar
-				        	);
-					        $custUser = new CustUsers();
-					        $id = $custUser->insertUser($insert_data);
-					        if(!empty($id)){
-					        	$insert_data = array();
-					        	$insert_data['user_id'] = $id;
-					        	$insert_data['user_gender'] = $user_profile['gender'] === 'male' ? 1 : ($user_profile['gender'] === 'female' ? 2 : 0);
-					        	$insert_data['user_tel1'] = "";
-					        	$insert_data['user_tel2'] = "";
-					        	$insert_data['user_tel3'] = "";
-					        	$insert_data['user_school'] = "";
-					        	$insert_data['user_address'] = "";
-					        	$insert_data['user_introduction'] = "";
-					        	$custUserProfile = new CustUsersProfile();
-					        	$custUserProfile->insertUser($insert_data);
-					        	
-					        	$insert_data = array();
-					        	$insert_data['user_id'] = $id;
-					        	$custUserSettingMail = new CustUsersSettingMail();
-					        	$custUserSettingMail->insertUser($insert_data);
-					        	
-					        	$ret = $custUser->getUserWithNoPass($email);
-					            if ( !empty($ret["user_id"]) ){
-					            	$zs = new CommonFnc_Z_Session_Class();
-						            $zs->setSession($ret);
-						            $data['success'] = 1;
-					            }
-				        	}
-			        	}
-			        	else{
-			        		$custUser = new CustUsers();
-			        		$ret = $custUser->getUserWithNoPass($email);
-					        if ( !empty($ret["user_id"]) ){
-					        	$zs = new CommonFnc_Z_Session_Class();
-					            $zs->setSession($ret);
-					            $data['success'] = 1;
-				            }
-			        	}
+			        $id = $user_profile['id'];
+			        if(empty($id)){
+			        	echo 'loi~ rui`';
+			        	exit;
 			        }
+			        $_SESSION['user_info'] = $user_profile;
+			        $data['success'] = 1;
+			        $json = UtilitiService::createJson($data);
+			        echo $json;
+			        //$email = $user_profile['email'];
+			        //$username = $user_profile['username'];
+			        //$urlImage = 'http://graph.facebook.com/'.$username.'/picture?width=150&height=150';
 			      } catch(FacebookApiException $e) {
-			        /*$login_url = $facebook->getLoginUrl(); 
-			        $this->view->login_url = $login_url;
-			        error_log($e->getType());
-			        error_log($e->getMessage());*/
+					exit;
 			      }   
 			}
 			else {
-				$data = array('success'=>0);
-		      // No user, print a link for the user to login
-		      //$login_url = $facebook->getLoginUrl();
-		      //$this->view->login_url = $login_url;
+				$json = UtilitiService::createJson($data);
+			    echo $json;
 		    }
-		    $json = UtilitiService::createJson($data);
-			echo $json;
 		}
 	}

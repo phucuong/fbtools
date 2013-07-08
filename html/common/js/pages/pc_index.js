@@ -22,7 +22,7 @@ document.createElement('footer');*/
 ** -------------------------------------------------- */
 
 $(document).ready(function() {
-	$("a#user_account_touroku").fancybox({
+	/*$("a#user_account_touroku").fancybox({
 		'titlePosition'	: 'inside'
 	});
 	
@@ -144,5 +144,5 @@ $(document).ready(function() {
 				}
 			}
 		});
-	});
+	});*/
 });

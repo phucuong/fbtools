@@ -1,5 +1,5 @@
 <?php
-    require_once dirname(__FILE__)."/../models/class.image.php";
+    /*require_once dirname(__FILE__)."/../models/class.image.php";
 
     class CommonFnc_Z_Session_Class
     {
@@ -424,5 +424,5 @@
 			$randomString .= $characters[rand(0, strlen($characters) - 1)];
 		}
 		return $randomString;
-	}
+	}*/
 ?>

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" type="text/css"  href="/common/css/common.css">
+<link rel="stylesheet" type="text/css"  href="/common/css/alert_box.css">
+<script type="text/javascript" src="/common/js/jquery.js"></script>
+<script type="text/javascript" src="/common/js/common.js"></script>
+<title>FB Tools</title>
+
+</head>
+<body id="base">
+{if empty($data)}
+{literal}
+<script>
+	alert('Hết session');
+	location.href = '/';
+</script>
+{/literal}
+{/if}
+<div class="wrapper">
+
+<h2 style="text-align: center; margin-bottom: 20px;">Chào mừng bạn <span style="color:red; font-size:28px; font-weight:bold;">{$info.first_name} {$info.last_name}</span> đến với fbtools</h2>
+<div class="dv_form">
+<form  name='form1' action="/postfeed" method="post" enctype="multipart/form-data">
+<table cellspacing="12px">
+	<tr>
+		<td><span style="font-size: 15px;">message</span></td>
+		<td><textarea name="message" id="txt_message"></textarea></td>
+	</tr>
+	<!-- <tr>
+		<td>image</td>
+		<td><input type="file" name=source id="source" /></td>
+	</tr> -->
+	<tr>
+		<td colspan="2"><button id="btnSubmit" type="button">Post bài</button></td>
+	</tr>
+</table>
+<input name="hid_group" id="hid_group" type="hidden" value="{$all_group}">
+</form>
+</div>
+<div class="dv_item">
+<p style="font-size:20px;">Chọn group bạn muốn post bài:</p>
+<ul id="list">
+<li><input type="checkbox" id="chkAll" value="1"/> Tất cả</li>
+{foreach from=$data item=g}
+    <li><input class="chk_group" type="checkbox" value="{$g.id}"/> {$g.name}</li>
+{/foreach}
+</ul>
+</div>
+</div>
+{include file='include/pc_alert_box.html'}
+<script type="text/javascript" src="/common/js/alert_box.js"></script>
+</body>
+</html>
