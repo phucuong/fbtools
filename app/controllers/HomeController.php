@@ -5,7 +5,6 @@ class HomeController extends Zend_Controller_Action
 	private $APP_ID = '';
 	private $SECRET = '';
 	public function init(){
-		
 		$this->info = $this->view->info = $_SESSION['user_info'];
 		//UtilitiService::printDebug($this->info);
 		if(empty($this->info)){
