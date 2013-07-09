@@ -51,9 +51,10 @@ class HomeController extends Zend_Controller_Action
   				'appId'  => $this->APP_ID,
   				'secret' => $this->SECRET,
 			));
+		//$facebook->setFileUploadSupport(true);
 		$access_token = $facebook->getAccessToken();
 		
-		/*if ((($_FILES["source"]["type"] == "image/gif")
+		/*	if ((($_FILES["source"]["type"] == "image/gif")
 			|| ($_FILES["source"]["type"] == "image/jpeg")
 			|| ($_FILES["source"]["type"] == "image/png")
 			|| ($_FILES["source"]["type"] == "image/pjpeg"))
@@ -61,19 +62,19 @@ class HomeController extends Zend_Controller_Action
 			if ($_FILES["source"]["error"] > 0){
 			    $error .= "Return Code: " . $_FILES["source"]["error"] . "<br />";
 			}else{
-			    echo "Upload: " . $_FILES["source"]["name"] . "<br />";
-			    echo "Type: " . $_FILES["source"]["type"] . "<br />";
-			    echo "Size: " . ($_FILES["source"]["size"] / 1024) . " Kb<br />";
-			    echo "Temp file: " . $_FILES["source"]["tmp_name"] . "<br />";
+			    //echo "Upload: " . $_FILES["source"]["name"] . "<br />";
+			    //echo "Type: " . $_FILES["source"]["type"] . "<br />";
+			    //echo "Size: " . ($_FILES["source"]["size"] / 1024) . " Kb<br />";
+			    //echo "Temp file: " . $_FILES["source"]["tmp_name"] . "<br />";
 			
-				$args = array('message' => $message);
-				$args['image'] = '@' . realpath($_FILES["source"]["tmp_name"]);
-				$args['fileName'] = 'FILE';
-				$data = $facebook->api('/326862114102997/photos', 'post', $args);
-				UtilitiService::printDebug($data);
+				//$args = array('message' => $message);
+				$param['image'] = '@' . realpath($_FILES["source"]["tmp_name"]);
+				//$args['fileName'] = 'FILE';
+				//$data = $facebook->api('/326862114102997/photos', 'post', $args);
+				//UtilitiService::printDebug($data);
 			}
-		}
-		exit;*/
+		}*/	
+		
 		$count = count($arrGroups);
 		$allGroup = $_SESSION['groups'];
 		$success = array();
