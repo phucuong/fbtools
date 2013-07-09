@@ -78,8 +78,9 @@ class HomeController extends Zend_Controller_Action
 		$allGroup = $_SESSION['groups'];
 		$success = array();
 		$fails = array();
+		$param['message'] = $message;
 		foreach ($arrGroups as $groupId) {
-			$post = $facebook->api("/{$groupId}/feed?message=$message",'post');
+			$post = $facebook->api("/{$groupId}/feed",'post',$param);
 			if(!empty($post['id'])){
 				foreach ($allGroup as $group) {
 					if($group['id'] == $groupId){
