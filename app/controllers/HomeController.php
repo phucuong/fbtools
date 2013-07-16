@@ -4,8 +4,11 @@ class HomeController extends Zend_Controller_Action
 	private $info = null;
 	private $APP_ID = '';
 	private $SECRET = '';
+	private $logger = null;
+	
 	public function init(){
 		$this->info = $this->view->info = $_SESSION['user_info'];
+		$this->logger = LogFactory::getLogger('HomeController');
 		//UtilitiService::printDebug($this->info);
 		if(empty($this->info)){
 			header('location:/');
@@ -81,19 +84,30 @@ class HomeController extends Zend_Controller_Action
 		$fails = array();
 		$param['message'] = $message;
 		foreach ($arrGroups as $groupId) {
-			$post = $facebook->api("/{$groupId}/feed",'post',$param);
-			if(!empty($post['id'])){
-				foreach ($allGroup as $group) {
-					if($group['id'] == $groupId){
-						$success[] = $group;
-						break;
+			try{
+				$post = $facebook->api("/{$groupId}/feed",'post',$param);
+				if(!empty($post['id'])){
+					foreach ($allGroup as $group) {
+						if($group['id'] == $groupId){
+							$success[] = $group;
+							break;
+						}
+					}
+				}
+				else{
+					foreach ($allGroup as $group) {
+						if($group['id'] == $groupId){
+							$fails[] = $group;
+							break;
+						}
 					}
 				}
 			}
-			else{
+			catch (Exception $e){
 				foreach ($allGroup as $group) {
 					if($group['id'] == $groupId){
 						$fails[] = $group;
+						$this->logger->err("can not post to group '{$group['name']}', Group Id: {$group['id']}. Message: ".$e->getMessage());
 						break;
 					}
 				}
